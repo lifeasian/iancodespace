@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <div class="title-section">
+                <div class="initials">PI</div>
+                <h1>Personal Information</h1>
+                <p class="subtitle">Complete your profile details</p>
+            </div>
+        </div>
+        
+        <form id="info-form">
+            <div class="progress-bar">
+                <div class="progress" id="form-progress"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="salutation">Salutation</label>
+                <select name="salutation" id="salutation" class="form-control">
+                    <option value="None" selected>Select Salutation</option>
+                    <option value="Mr.">👨🏾 Mr.</option>
+                    <option value="Mrs.">👩🏾 Mrs.</option>
+                    <option value="Ms.">👩🏾 Ms.</option>
+                    <option value="Dr.">👨🏾‍⚕️ Dr.</option>
+                </select>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="first-name">👤 Given Name <span class="required">*</span></label>
+                    <input type="text" name="first_name" id="first-name" class="form-control" required>
+                    <span class="validation-message" id="first-name-validation"></span>
+                </div>
+                
+                <div class="form-group half">
+                    <label for="last-name">👤 Surname <span class="required">*</span></label>
+                    <input type="text" name="last_name" id="last-name" class="form-control" required>
+                    <span class="validation-message" id="last-name-validation"></span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>🎭 Gender</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="male" id="male" checked>
+                        <label for="male">👨🏾 Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="female" id="female">
+                        <label for="female">👩🏾 Female</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="other" id="other">
+                        <label for="other">🤷🏾 Other</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">📧 Email Address <span class="required">*</span></label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" id="email" class="form-control" required aria-label="Email Address">
+                </div>
+                <small class="helper-text">We'll never share your email.</small>
+                <span class="validation-message" id="email-validation"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone-number">📱 Contact Number <span class="required">*</span></label>
+                <div class="phone-input-group">
+                    <div class="country-selector">
+                        <select name="country_code" id="country-code" class="form-control">
+                            <option value="+1" data-flag="🇺🇸">🇺🇸 +1 (US)</option>
+                            <option value="+44" data-flag="🇬🇧">🇬🇧 +44 (UK)</option>
+                            <option value="+91" data-flag="🇮🇳">🇮🇳 +91 (IN)</option>
+                            <option value="+86" data-flag="🇨🇳">🇨🇳 +86 (CN)</option>
+                            <option value="+81" data-flag="🇯🇵">🇯🇵 +81 (JP)</option>
+                            <option value="+49" data-flag="🇩🇪">🇩🇪 +49 (DE)</option>
+                            <option value="+33" data-flag="🇫🇷">🇫🇷 +33 (FR)</option>
+                            <option value="+39" data-flag="🇮🇹">🇮🇹 +39 (IT)</option>
+                            <option value="+34" data-flag="🇪🇸">🇪🇸 +34 (ES)</option>
+                            <option value="+7" data-flag="🇷🇺">🇷🇺 +7 (RU)</option>
+                            <option value="+55" data-flag="🇧🇷">🇧🇷 +55 (BR)</option>
+                            <option value="+61" data-flag="🇦🇺">🇦🇺 +61 (AU)</option>
+                            <option value="+27" data-flag="🇿🇦">🇿🇦 +27 (ZA)</option>
+                            <option value="+234" data-flag="🇳🇬">🇳🇬 +234 (NG)</option>
+                            <option value="+254" data-flag="🇰🇪">🇰🇪 +254 (KE)</option>
+                            <option value="+233" data-flag="🇬🇭">🇬🇭 +233 (GH)</option>
+                        </select>
+                    </div>
+                    <div class="phone-input">
+                        <input type="tel" name="phone_number" id="phone-number" class="form-control" required placeholder="Enter phone number">
+                    </div>
+                </div>
+                <small class="helper-text">Select your country code and enter your phone number</small>
+                <span class="validation-message" id="phone-validation"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="date-of-birth">🎂 Birth Date <span class="required">*</span></label>
+                <input type="date" name="date_of_birth" id="date-of-birth" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">🏠 Home Address <span class="required">*</span></label>
+                <textarea name="address" id="address" rows="3" class="form-control" required></textarea>
+                <span class="validation-message" id="address-validation"></span>
+            </div>
+            
+            <div class="form-group terms-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">✅ I accept the terms and conditions</label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" id="submit-btn" class="btn-primary">
+                    <span>Submit Information</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
